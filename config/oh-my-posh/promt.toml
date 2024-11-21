@@ -1,0 +1,64 @@
+version = 2
+final_space = true
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+
+  [[blocks.segments]]
+    type = 'os'
+    style = 'plain'
+    template = '{{.Icon}} '
+    foreground = 'p:os'
+
+  [[blocks.segments]]
+    type = 'session'
+    style = 'plain'
+    template = '[{{.UserName}}] '
+    foreground = 'p:blue'
+
+  [[blocks.segments]]
+    type = 'path'
+    style = 'plain'
+    template = '{{ .Path }} '
+    foreground = 'p:pink'
+
+    [blocks.segments.properties]
+      folder_icon = '....'
+      home_icon = '~'
+      style = 'agnoster_short'
+
+  [[blocks.segments]]
+    type = 'git'
+    style = 'plain'
+    template = '{{ .HEAD }} '
+    foreground = 'p:lavender'
+
+    [blocks.segments.properties]
+      branch_icon = ' '
+      cherry_pick_icon = ' '
+      commit_icon = ' '
+      fetch_status = false
+      fetch_upstream_icon = false
+      merge_icon = ' '
+      no_commits_icon = ' '
+      rebase_icon = ' '
+      revert_icon = ' '
+      tag_icon = ' '
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    template = ''
+    foreground = 'p:closer'
+
+[palette]
+  blue = '#89B4FA'
+  closer = 'p:os'
+  lavender = '#B4BEFE'
+  os = '#ACB0BE'
+  pink = '#F5C2E7'
+[transient_prompt]
+background = "transparent"
+foreground = "#ffffff"
+template = "-> "

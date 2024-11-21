@@ -1,0 +1,73 @@
+###### reload ######
+
+super + Escape
+	pkill -USR1 -x sxhkd ; notify-send "SXHKD Reloaded"
+
+########### ss ###########
+
+Print
+    maim -m 10 ~/Pictures/ss/$(date).png && notify-send 'maim' 'fullscreeen shot saved' -t 500
+
+shift + Print
+   maim -u -m 10 -s | xclip -selection clipboard -t image/png && notify-send 'maim' 'partial shot copied to clipbaord' -t 500
+
+super + shift + Print
+   maim -u -m 10 -s ~/Pictures/ss/$(date).png && notify-send 'maim' 'partial shot saved' -t 500
+   
+alt + Print
+   maim -m 10 -st 9999999 ~/Pictures/ss/$(date).png && maim -m 10 -st 9999999  | xclip -selection clipboard -target image/png && notify-send 'maim' 'app window saved & copied' -t 500
+
+####### lock/power #####
+
+super + shift + q
+      ~/.config/rofi/powermenu/powermenu.sh
+
+super + alt + x
+      betterlockscreen -l dimblur --time-format '%I:%M %p' --show-layout
+
+###### launchers #####
+
+ctrl + super + v
+       rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
+super + period
+       rofi -modi emoji -show emoji -emoji-mode insert          
+
+super + alt + a
+       rofi -show filebrowser -config ~/.config/rofi/file.rasi
+
+###### apps ######
+
+super + a
+        alacritty --class Anime --option window.dimensions.columns=76 --option window.dimensions.lines=18 -e bash -c "source ~/myenv/bin/activate && anipy-cli"
+
+super + ctrl + Return
+        kitty
+
+super + b 
+        brave
+
+super + z
+        spotify-launcher
+
+super + v
+        kitty -e yazi
+
+super + shift + v
+        nemo
+
+super + d 
+        vesktop
+########### vol ##########
+
+super + Up 
+   pamixer -i 5 && ~/.dwm/ss.sh up
+
+super + Down 
+   pamixer -d 5  && ~/.dwm/ss.sh down
+
+super + alt + Up
+   xbacklight -inc 5 && ~/.dwm/vv.sh up
+
+super + alt + Down
+   xbacklight -dec 5 && ~/.dwm/vv.sh down
