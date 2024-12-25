@@ -65,3 +65,5 @@ oh-my-posh init fish --config ~/.config/oh-my-posh/promt.toml | source
 zoxide init fish | source
 fzf --fish | source
 
+
+fish_add_path /home/kolpona/.spicetify

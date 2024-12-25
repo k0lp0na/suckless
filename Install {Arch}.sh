@@ -63,11 +63,11 @@ echo "$CONFIG_CONTENT" | sudo tee -a "$CONFIG_FILE" > /dev/null
 echo "Touchpad configuration added successfully."
 
 # icon for dunst
-cp icon/BeautyLine ~/.icons/
+cp -r icon/BeautyLine ~/.icons/
 
 # installing necessary app
 
-sudo pacman -S --noconfirm alacritty rofi dunst fish fastfetch kitty mpv picom sxhkd yazi fzf zoxide pamixer maim xclip lsd nitrogen ttf-jetbrains-mono-nerd lxappearance noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra polkit-gnome xorg-xsetroot acpi awk
+sudo pacman -S --noconfirm alacritty rofi dunst fish fastfetch kitty mpv picom sxhkd yazi fzf zoxide pamixer maim xclip lsd nitrogen ttf-jetbrains-mono-nerd lxappearance noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra polkit-gnome xorg-xsetroot acpi awk unzip
 
 # promt
 
