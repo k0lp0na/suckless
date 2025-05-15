@@ -1,7 +1,6 @@
 # kaawai fetch
 
 fastfetch -c ~/.config/fastfetch/com.jsonc
-#pfetch
 
 # remove welcome 
 set -g fish_greeting
@@ -27,12 +26,8 @@ function ff
     fastfetch $argv
 end
 
-function cat
-    bat
-end
-
 function updt
-    sudo pacman -Syu && paru
+    sudo pacman -Syu && sudo paru
 end
 
 function in
@@ -49,13 +44,14 @@ function exile
 end
 
 function pin
-    paru $argv
+   sudo paru $argv
 end
 
 
 function vim 
    nvim $argv
 end
+
 
 # set PATH
 set -gx PATH ~/.local/bin $PATH
@@ -64,6 +60,3 @@ set -gx PATH ~/.local/bin $PATH
 oh-my-posh init fish --config ~/.config/oh-my-posh/promt.toml | source
 zoxide init fish | source
 fzf --fish | source
-
-
-fish_add_path /home/kolpona/.spicetify

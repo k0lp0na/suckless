@@ -6,24 +6,24 @@ super + Escape
 ########### ss ###########
 
 Print
-    maim -m 10 ~/Pictures/ss/$(date).png && notify-send 'maim' 'fullscreeen shot saved' -t 500
+    maim -m 10 ~/Pictures/ss/$(date).png && notify-send 'maim' 'fullscreeen shot saved' -t 900
 
 shift + Print
-   maim -u -m 10 -s | xclip -selection clipboard -t image/png && notify-send 'maim' 'partial shot copied to clipbaord' -t 500
+   maim -u -m 10 -s | xclip -selection clipboard -t image/png && notify-send 'maim' 'partial shot copied to clipbaord' -t 900
 
 super + shift + Print
-   maim -u -m 10 -s ~/Pictures/ss/$(date).png && notify-send 'maim' 'partial shot saved' -t 500
+   maim -u -m 10 -s ~/Pictures/ss/$(date).png && notify-send 'maim' 'partial shot saved' -t 900
    
 alt + Print
-   maim -m 10 -st 9999999 ~/Pictures/ss/$(date).png && maim -m 10 -st 9999999  | xclip -selection clipboard -target image/png && notify-send 'maim' 'app window saved & copied' -t 500
+   maim -m 10 -st 9999999 ~/Pictures/ss/$(date).png && & notify-send 'maim' 'app window saved' -t 900
+
+super + alt + Print
+   maim -m 10 -st 9999999  | xclip -selection clipboard -target image/png && notify-send 'maim' 'app window copied' -t 900
 
 ####### lock/power #####
 
 super + shift + q
       ~/.config/rofi/powermenu/powermenu.sh
-
-super + alt + x
-      betterlockscreen -l dimblur --time-format '%I:%M %p' --show-layout
 
 ###### launchers #####
 
@@ -39,7 +39,10 @@ super + alt + a
 ###### apps ######
 
 super + a
-        alacritty --class Anime --option window.dimensions.columns=76 --option window.dimensions.lines=18 -e bash -c "source ~/myenv/bin/activate && anipy-cli"
+        alacritty --class Anime --option window.dimensions.columns=76 --option window.dimensions.lines=18 -e bash -c "source ~/.mv/bin/activate && anipy-cli -ss"
+
+super + m
+        alacritty --class Cmus --option window.dimensions.columns=90 --option window.dimensions.lines=22 -e bash -c "cmus"
 
 super + ctrl + Return
         kitty
@@ -57,17 +60,22 @@ super + shift + v
         nemo
 
 super + d 
-        vesktop
+        discord
+
+super + g 
+        heroic
+
+
 ########### vol ##########
 
 super + Up 
-   pamixer -i 5 && ~/.dwm/ss.sh up
+   pamixer -i 5 && volume-notif
 
 super + Down 
-   pamixer -d 5  && ~/.dwm/ss.sh down
+   pamixer -d 5  && volume-notif
 
 super + alt + Up
-   xbacklight -inc 5 && ~/.dwm/vv.sh up
+   brightnessctl s +5% && brightness-notif
 
 super + alt + Down
-   xbacklight -dec 5 && ~/.dwm/vv.sh down
+   brightnessctl s 5%- && brightness-notif

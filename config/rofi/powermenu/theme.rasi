@@ -27,7 +27,7 @@ window {
     border-radius:               20px;
     border-color:                @selected;
     cursor:                      "default";
-    background-color:            @background-alt;
+    background-color:            @background;
 }
 
 /*****----- Main Box -----*****/
