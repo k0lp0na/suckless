@@ -38,6 +38,12 @@
 
 + **Fonts** : Jetbrains Mono Nerd Font and Noto Sans CJK.
 
++ **Icons** : https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme/tree/master/icons
+
++ **Cursor** : https://github.com/phisch/phinger-cursors
+
++ **GTK Theme** : I forgor💀
+
 + **Login Mananger** : SDDM
 
 
